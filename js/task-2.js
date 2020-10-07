@@ -10,7 +10,7 @@ const ingredients = [
 // после чего вставит все li за одну операцию в список ul.ingredients.
 // Для создания DOM - узлов используй document.createElement().
 
-const listEl = document.querySelector("ul");
+const listEl = document.querySelector("#ingredients");
 listEl.append(
   ...ingredients.map((ingridient) => {
     const liEl = document.createElement("li");
