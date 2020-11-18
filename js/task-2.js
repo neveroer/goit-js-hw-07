@@ -16,12 +16,15 @@ const ingredients = [
 // Для создания DOM-узлов используй document.createElement().
 
 
-const listOfIngredients = document.querySelector("#ingredients");
+const ingredientsList = document.querySelector('#ingredients')
+const makeIngredientsList = items => {
+  return items.map(item => {
+    const listItem = document.createElement('li')
+    listItem.textContent = item
+  
+    return listItem
+  })
+}
 
-const ingredientsItem = ingredients.map((item) => {
-  const listItem = document.createElement("li");
-  listItem.textContent = item;
-  return listItem;
-});
-
-listOfIngredients.append(...ingredientsItem);
+const elements = makeIngredientsList(ingredients)
+  ingredientsList.append(...elements)
